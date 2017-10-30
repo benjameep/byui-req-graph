@@ -1,0 +1,42 @@
+<head>
+  <script type="text/javascript" src="vis-4.21.0/dist/vis.js"></script>
+  <link href="vis-4.21.0/dist/vis.css" rel="stylesheet" type="text/css" />
+  <script src="fixed.js"></script>
+  <style type="text/css">
+    .network {
+      width: 99%;
+      height: 99%;
+      border: 1px solid lightgray;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="network"></div>
+
+  <script type="text/javascript">
+    var container = document.querySelector('.network');
+    var options = {
+      layout: {
+        improvedLayout: false
+      },
+      physics: {
+        enabled: false
+      },
+			edges : {
+				arrows : {
+					from: {enabled: true, scaleFactor:0.5, type:'arrow'}
+				},
+				color: {
+					color:'#000000',
+				},
+			},
+			nodes : {
+				shape:"box"
+			}
+    };
+    // initialize your network!
+    var network = new vis.Network(container, data, options);
+
+  </script>
+</body>
